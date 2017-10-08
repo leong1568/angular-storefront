@@ -5,6 +5,7 @@ import { ProductDetailsPageComponent } from './main/product-details-page/product
 import { ShoppingCartPageComponent } from './main/shopping-cart-page/shopping-cart-page.component';
 
 export const ROUTES: Routes = [
+    {path:'',redirectTo: 'home/plates', pathMatch:'full'},
     {path:'home',redirectTo: 'home/plates', pathMatch:'full'},
     {path:'home/plates', component: CategoryPageComponent},
     {path:'home/plates/:id',component: ProductDetailsPageComponent},
