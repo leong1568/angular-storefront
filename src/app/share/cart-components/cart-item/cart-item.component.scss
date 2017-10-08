@@ -1,25 +1,101 @@
+@import '../../../../global';
+
 .row.order-item {
     margin: 10px 0;
     .product-info{
         width: 300px; 
-        padding-top: 50px;  
+        height: 120px;
+        @include breakpoint(xs){
+            width: 100%;    
+        }
+        @include breakpoint(sm){
+            width: 100%; 
+        }
+        @include breakpoint(md){
+            width: 250px;
+            height: 200px;
+        }
+        @include breakpoint(md){
+            width: 250px;
+            height: 200px;
+        }    
     }
     img {
-        width: 250px;
-        height: 200px;
+        @include breakpoint(xs){
+            width: 120px;
+            height: 120px;
+        }
+        @include breakpoint(sm){
+            width: 120px;
+            height: 120px;
+        }
+        @include breakpoint(md){
+            width: 250px;
+            height: 200px;
+        }
+        @include breakpoint(md){
+            width: 250px;
+            height: 200px;
+        }  
     }
-
     .action {
-        padding-top: 70px;
+        padding-right: 20px;
         text-align: right; 
+        @include breakpoint(xs){
+            padding-top: 25px;
+            width: 100%;    
+        }
+        @include breakpoint(sm){
+            padding-top: 25px;
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 70px;
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 70px;
+            width: 100%;   
+        }    
     }
 
     .order-quanity {
-        padding-top: 50px; 
+        padding-left: 10px;
+        @include breakpoint(xs){
+            padding-top: 10px;
+            width: 100%;    
+        }
+        @include breakpoint(sm){
+            padding-top: 10px;
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 50px; 
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 50px; 
+            width: 100%;   
+        }    
     }
 
     .order-price{
-        padding-top: 70px; 
+        @include breakpoint(xs){
+            padding-top: 25px;
+            width: 100%;    
+        }
+        @include breakpoint(sm){
+            padding-top: 25px;
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 70px;
+            width: 100%;   
+        }
+        @include breakpoint(md){
+            padding-top: 70px;
+            width: 100%;   
+        }    
     }
     .title{
         font-weight: bold;

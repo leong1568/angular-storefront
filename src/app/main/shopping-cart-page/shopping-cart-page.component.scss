@@ -1,3 +1,5 @@
+@import '../../../global';
+
 .shopping-cart {
     margin: 0;
     border: 0;
@@ -8,7 +10,18 @@
 
     background-color: #E6EAED;
     .cart-details{
-       width: 850px; 
+        @include breakpoint(xs){
+            width: 100%;
+        }
+        @include breakpoint(sm){
+            width: 100%;
+        }
+        @include breakpoint(md){
+            width: 60%;
+        }
+        @include breakpoint(md){
+            width: 40%;
+        }  
        margin: 0 auto;
        padding: 0 0 0 0;
        background-color: white;
