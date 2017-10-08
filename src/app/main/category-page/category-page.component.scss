@@ -1,0 +1,25 @@
+@import '../../../global';
+
+.category-header {
+    @include background('../../../assets/images/plates-header.jpg');
+    .category-text {
+        height: 300px;
+        margin: 20px auto;
+        background: black;
+        color: white;
+        border-left: 10px solid white;
+        border-right: 10px solid white;
+        @include breakpoint(xs){
+            width: 100%;
+        }
+        @include breakpoint(sm){
+            width: 80%;
+        }
+        @include breakpoint(md){
+            width: 60%;
+        }
+        @include breakpoint(md){
+            width: 40%;
+        }
+    }
+}

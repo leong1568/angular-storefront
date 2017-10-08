@@ -1,0 +1,39 @@
+@import '../../../global';
+
+.cart {
+    width: 200px;
+    text-align: right;
+    @include breakpoint(xs){
+        .desktop-only{
+            display:none;
+        }
+        .mobile-only{
+            display:inline-block;
+        }
+    }
+    @include breakpoint(sm){
+        .desktop-only{
+            display:none;
+        }
+        .mobile-only{
+            display:inline-block;
+        }
+    }
+    @include breakpoint(md){
+        .mobile-only{
+            display:none;
+        }
+        .desktop-only{
+            display:inline-block;
+        }
+    }
+    @include breakpoint(md){
+        .mobile-only{
+            display:none;
+        }
+        .desktop-only{
+            display:inline-block;
+        }
+    }
+
+}

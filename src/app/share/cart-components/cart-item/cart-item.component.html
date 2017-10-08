@@ -1,0 +1,31 @@
+<div class="row order-item text-center">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="row">
+            <div class="col-6">
+                    <img src="assets/images/{{cartItem.product?.image}}" />   
+            </div>
+            <div class="product-info col-6 align-middle">
+                    <div class="brand">{{cartItem.product?.brand}}</div>
+                    <div class="title">{{cartItem.product?.title}}</div>
+                    <div class="price">{{cartItem.product?.price | aud}}</div>
+            </div>    
+        </div>
+    </div>
+    <div class="order-info col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="row">
+            <div class="col-6">
+                <div class="order-quanity">
+                    <order-quantity [quantity]="cartItem.quantity" (modelChange)="orderQuantityChange($event)"></order-quantity>
+                </div>  
+            </div>
+            <div class="col-3 order-price">
+                <div class="price">{{cartItem.subTotal | aud}}</div>  
+            </div>
+            <div class="col-3">
+                <div class="action">
+                    <button (click)="removeItem(cartItem)">X</button>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

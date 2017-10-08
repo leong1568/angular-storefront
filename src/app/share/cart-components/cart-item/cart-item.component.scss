@@ -1,0 +1,28 @@
+.row.order-item {
+    margin: 10px 0;
+    .product-info{
+        width: 300px; 
+        padding-top: 50px;  
+    }
+    img {
+        width: 250px;
+        height: 200px;
+    }
+
+    .action {
+        padding-top: 70px;
+        text-align: right; 
+    }
+
+    .order-quanity {
+        padding-top: 50px; 
+    }
+
+    .order-price{
+        padding-top: 70px; 
+    }
+    .title{
+        font-weight: bold;
+        font-size: large;
+    }
+}

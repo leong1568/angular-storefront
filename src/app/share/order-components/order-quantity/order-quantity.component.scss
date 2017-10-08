@@ -1,0 +1,20 @@
+
+table#order-quantity {
+    border-collapse: separate;
+
+    .quantity {
+        height: 56px;
+        width: 80px;
+        text-align: center;
+        background-color: lightslategrey
+    }
+
+    .change-btn{
+        height: 28px;
+        width:25px;
+        background: lightgray;
+        text-align: center;
+        border-color: white
+    }        
+    
+}

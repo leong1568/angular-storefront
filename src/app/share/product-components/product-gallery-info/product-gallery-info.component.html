@@ -1,0 +1,14 @@
+<div class="gallery-product">
+    <div class="dropdown-content">
+        <div>
+            <a (click)="onClick()">VIEW DETAILS</a>    
+        </div>
+        <div>
+            <a (click)="addToCart()">ADD TO CART</a>
+        </div>
+    </div>
+    <img src="assets/images/{{product.image}}" />
+    <div class="brand">{{product.brand}}</div>
+    <div class="title">{{product.title}}</div>
+    <div class="price">{{product.price | aud}}</div>
+</div>
