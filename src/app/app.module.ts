@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import {ROUTES} from "./app.routes";
+import { BootstrapNavbarModule } from './modules/bootstrap-navbar/index';
 
 
 
@@ -16,6 +17,7 @@ import {ROUTES} from "./app.routes";
     BrowserModule,
     HttpClientModule,
     MainModule,
+    BootstrapNavbarModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [],

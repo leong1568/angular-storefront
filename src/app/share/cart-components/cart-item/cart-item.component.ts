@@ -1,3 +1,4 @@
+import { ShoppingCart } from './../../../models/shopping-cart.model';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { CartItem } from '../../../models/cart-item.model';
 
@@ -9,7 +10,7 @@ import { CartItem } from '../../../models/cart-item.model';
 export class CartItemComponent implements OnInit {
 
   @Input()
-  cartItem:CartItem;
+  cart:ShoppingCart;
 
   @Output()
   removeItemEvent:EventEmitter<CartItem>=new EventEmitter<CartItem>();
@@ -26,8 +27,13 @@ export class CartItemComponent implements OnInit {
      this.removeItemEvent.next(item);
   }
 
-  orderQuantityChange($event){
-     this.cartItem.quantity = $event;
-     this.updateItemEvent.next(this.cartItem); 
+  orderQuantityChange(cartItem:CartItem, $event){
+     cartItem.quantity = $event;
+     if(cartItem.quantity > 0){
+        this.updateItemEvent.next(cartItem); 
+     } else {
+        this.removeItemEvent.next(cartItem);
+     }
+    
   }
 }

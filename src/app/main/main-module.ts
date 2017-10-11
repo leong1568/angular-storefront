@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { StorageService, LocalStorageService } from './../services/storage.service';
 import { ProductService } from './../services/product-service';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
@@ -8,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { ProductDetailsPageComponent } from './product-details-page/product-details-page.component';
 import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-page.component';
 import { ShoppingCartService } from '../services/shopping-cart-service';
+import { MAIN_ROUTES } from './main.routes';
 
 const MAIN_COMPONENTS=[
     NavbarMainComponent,
@@ -21,7 +23,8 @@ const MAIN_COMPONENTS=[
         ...MAIN_COMPONENTS
     ],
     imports:[
-        ShareModule
+        ShareModule,
+        RouterModule.forChild(MAIN_ROUTES)
     ],
     exports:[
         ...MAIN_COMPONENTS

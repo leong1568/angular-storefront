@@ -1,31 +1,57 @@
-<div class="row order-item text-center">
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-        <div class="row">
-            <div class="col-6">
-                    <img src="assets/images/{{cartItem.product?.image}}" />   
-            </div>
-            <div class="product-info col-6 align-middle">
-                    <div class="brand">{{cartItem.product?.brand}}</div>
-                    <div class="title">{{cartItem.product?.title}}</div>
-                    <div class="price">{{cartItem.product?.price | aud}}</div>
-            </div>    
-        </div>
+<div class="container-fluid shopping-card">
+    <div class="row column-labels" *ngIf="cart.items && cart.items.length > 0">
+        <div class="col-md-3 col-lg-6">Product</div>
+        <div class="col-md-3 col-lg-2">Quantity</div>
+        <div class="product-line-price col-md-3 col-lg-2">Total</div>
+        <div class="product-removal col-md-3 col-lg-2">Action</div>
     </div>
-    <div class="order-info col-xs-12 col-sm-12 col-md-4 col-lg-4">
-        <div class="row">
-            <div class="col-6">
-                <div class="order-quanity">
-                    <order-quantity [quantity]="cartItem.quantity" (modelChange)="orderQuantityChange($event)"></order-quantity>
+
+    <div class="row product" *ngFor="let cartItem of cart.items">
+        <div class="col-sm-12 col-md-3 col-lg-6">
+            <div class="row product-details">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                        <img src="assets/images/{{cartItem.product?.image}}"/>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="row">
+                        <div class="col-12">{{cartItem.product?.brand}}</div>
+                        <div class="product-title col-12">{{cartItem.product?.title}}</div>
+                        <div class="col-12">{{cartItem.product?.price | aud}}</div>
+                    </div>
                 </div>  
             </div>
-            <div class="col-3 order-price">
-                <div class="price">{{cartItem.subTotal | aud}}</div>  
-            </div>
-            <div class="col-3">
-                <div class="action">
-                    <button (click)="removeItem(cartItem)">X</button>    
-                </div>
-            </div>
+        </div> 
+        <div class="product-quantity col-sm-4 col-md-3 col-lg-2">
+            <order-quantity [quantity]="cartItem.quantity" (modelChange)="orderQuantityChange(cartItem, $event)"></order-quantity>
+        </div>
+        <div class="product-line-price col-sm-4 col-md-3 col-lg-2">
+            <div>{{cartItem.product.price * cartItem.quantity | aud}}</div>  
+        </div>
+        <div class="product-removal col-sm-4 col-md-3 col-lg-2">
+            <button (click)="removeItem(cartItem)">X</button>    
+        </div>
+    </div>
+    <div class="totals" *ngIf="cart.items && cart.items.length > 0">
+        <div class="row">
+            <div class="col-md-8 col-lg-8"></div>
+            <div class="total-label col-sm-6 col-md-2 col-lg-2">Overview</div>
+            <div class="total-value col-sm-6 col-md-2 col-lg-2"></div>
+        </div>
+        <div class="row">
+                <div class="col-md-8 col-lg-8"></div>
+                <div class="total-label col-sm-6 col-md-2 col-lg-2">Subtotal</div>
+                <div class="total-value col-sm-6 col-md-2 col-lg-2">{{cart.orderTotal|aud}}</div>
+        </div>
+        <div class="row">
+                <div class="col-md-8 col-lg-8"></div>
+                <div class="total-label col-sm-6 col-md-2 col-lg-2">Total</div>
+                <div class="total-value col-sm-6 col-md-2 col-lg-2">{{cart.orderTotal|aud}}</div>
+        </div>
+    </div>
+    <div class="action">
+        <div class="row">
+            <div class="action-link col-sm-12 col-md-6 col-lg-6"><a  href="/home" lass="btn btn-link">CONTINUE SHOPPING</a></div>
+            <div class="action-button col-sm-12 col-md-6 col-lg-6" *ngIf="cart.items && cart.items.length > 0"><button>CHECKOUT ({{cart.orderTotal|aud}}) </button></div>
         </div>
     </div>
 </div>

@@ -1,10 +1,23 @@
 <nav class="navbar navbar-expand-md navbar-expand-lg navbar-default">
-  <button class="navbar-toggler justify-content-start" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-  </button>
-  <a href="/home" class="navbar-brand"><img src="../../../assets/images/logo.png"/></a>
-  <div class="collapse navbar-collapse  justify-content-center" id="navbarNav">
-    <ul class="navbar-nav">
+  <div class="navbar-header">
+        <div class="row">
+            <div class=" hidden-md-up col-xs-12 col-sm-4 text-left  d-flex align-items-center h-200">
+                <button class="navbar-toggler justify-content-start x clearfix" type="button" data-toggle="collapse" data-target="#bd-main-nav"  aria-controls="bd-main-nav" aria-expanded="false"  aria-label="Toggle navigation">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+                <a href="/home" class="navbar-brand"><img src="../../../assets/images/logo.png" height="40"/></a>
+            </div>
+            <div class="col-xs-12 col-sm-4 mobile-only text-right mobile-card">
+                <a class="cart" href="/cart">
+                  <i class="mobile-only fa fa-lock" aria-hidden="true">&nbsp;&nbsp;</i><span class="mobile-only">({{itemNumber}})</span>
+                </a>
+            </div>
+    </div>
+  </div>
+  <div class="navbar-collapse collapse justify-content-start" id="bd-main-nav" aria-expanded="true">
+    <ul class="nav navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -33,9 +46,11 @@
       </li>
     </ul>
   </div>
-  <a href="cart" class="cart">
-    <div>
-        <span class="desktop-only">My Cart&nbsp;&nbsp;</span><i class="mobile-only fa fa-lock" aria-hidden="true">&nbsp;&nbsp;</i><span>({{itemNumber}})</span>
-    </div>
-  </a>
+  <div class="col-md-2 col-lg-2 text-right desktop-only">
+      <a class="cart" href="/cart">
+        <span class="cart desktop-only">My Cart&nbsp;&nbsp;</span><span class="desktop-only">({{itemNumber}})</span>
+      </a>
+  </div>
+  <div class="col-md-2 col-lg-2 desktop-only">
+  </div>
 </nav>

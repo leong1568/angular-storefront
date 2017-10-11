@@ -1,23 +1,8 @@
 <div class="shopping-cart">
-    <div class="jumbotron">
+    <div class="cart-header">
         <div class="header-lg">Shopping Cart</div>
     </div>
     <div class="cart-details">
-        <div class="row">
-            <div *ngFor="let cartItem of cart.items">
-                <cart-item [cartItem]="cartItem" (removeItemEvent)="onRemoveItemEvent($event)" (updateItemEvent)="onUpdateItemEvent($event)"></cart-item>
-            </div>
-        </div>
-        <div class="row">
-            <div id="order-summary">
-                <order-overview [cart]="cart"></order-overview>   
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <a href="/home">CONTINUE SHOPPING</a>
-                <button class="pull-right">CHECKOUT ({{cart.orderTotal|aud}})</button>
-            </div>
-        </div>
+        <cart-item [cart]="cart" (removeItemEvent)="onRemoveItemEvent($event)" (updateItemEvent)="onUpdateItemEvent($event)"></cart-item>
     </div>
 </div>

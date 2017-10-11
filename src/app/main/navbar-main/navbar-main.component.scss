@@ -1,9 +1,16 @@
+
 @import '../../../global';
 
+.navbar-header {
+    width: 100%;
+}
+
+.mobile-card {
+    padding-top: 15px;
+}
 .cart {
-    width: 200px;
-    text-align: right;
-    @include breakpoint(xs){
+    marging-top: 100px;
+    @include breakpoint(mobile){
         .desktop-only{
             display:none;
         }
@@ -11,23 +18,8 @@
             display:inline-block;
         }
     }
-    @include breakpoint(sm){
-        .desktop-only{
-            display:none;
-        }
-        .mobile-only{
-            display:inline-block;
-        }
-    }
-    @include breakpoint(md){
-        .mobile-only{
-            display:none;
-        }
-        .desktop-only{
-            display:inline-block;
-        }
-    }
-    @include breakpoint(md){
+
+    @include breakpoint(desktop){
         .mobile-only{
             display:none;
         }
@@ -37,3 +29,4 @@
     }
 
 }
+

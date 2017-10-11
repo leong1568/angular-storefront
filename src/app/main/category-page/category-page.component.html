@@ -1,14 +1,17 @@
 
-<div class="category-header">
-    <div class="category-text">
-        <div class="text-middle">
-            <div class="display-3 text-center">Plates</div>     
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar, placerat turpis ac, interdum metus. In eget massa sed enim hendrerit auctor a eget.</p>    
+<div class="container">
+    <div class="category-header">
+        <img src="../../../assets/images/plates-header.jpg"/>
+        <div class="header-text">
+            <div class="text-middle">
+                <div class="display-3 text-center">Plates</div>     
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at purus pulvinar, placerat turpis ac, interdum metus. In eget massa sed enim hendrerit auctor a eget.</p>    
+            </div>
         </div>
     </div>
-</div>
-<div class="row image-gallary">
-  <div class="gallery col-sm-12 col-md-6 col-lg-4" *ngFor="let product of products">
-     <product-gallery-info [product]="product" (onClickEvent)="showProductDetails($event)" (onAddToCartEvent)="addToCart($event)"></product-gallery-info>
-  </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-lg-4" *ngFor="let product of products">
+            <product-gallery-info [product]="product" (onClickEvent)="showProductDetails($event)" (onAddToCartEvent)="addToCart($event)"></product-gallery-info>
+        </div>
+    </div>
 </div>

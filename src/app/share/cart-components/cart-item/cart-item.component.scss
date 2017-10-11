@@ -1,104 +1,115 @@
 @import '../../../../global';
 
-.row.order-item {
-    margin: 10px 0;
-    .product-info{
-        width: 300px; 
-        height: 120px;
-        @include breakpoint(xs){
-            width: 100%;    
-        }
-        @include breakpoint(sm){
-            width: 100%; 
-        }
-        @include breakpoint(md){
-            width: 250px;
-            height: 200px;
-        }
-        @include breakpoint(md){
-            width: 250px;
-            height: 200px;
-        }    
-    }
-    img {
-        @include breakpoint(xs){
-            width: 120px;
-            height: 120px;
-        }
-        @include breakpoint(sm){
-            width: 120px;
-            height: 120px;
-        }
-        @include breakpoint(md){
-            width: 250px;
-            height: 200px;
-        }
-        @include breakpoint(md){
-            width: 250px;
-            height: 200px;
-        }  
-    }
-    .action {
-        padding-right: 20px;
-        text-align: right; 
-        @include breakpoint(xs){
-            padding-top: 25px;
-            width: 100%;    
-        }
-        @include breakpoint(sm){
-            padding-top: 25px;
-            width: 100%;   
-        }
-        @include breakpoint(md){
-            padding-top: 70px;
-            width: 100%;   
-        }
-        @include breakpoint(md){
-            padding-top: 70px;
-            width: 100%;   
-        }    
-    }
+$color-border: #eee;
+$font-default: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-bold: 'HelveticaNeue-Medium', 'Helvetica Neue Medium';
 
-    .order-quanity {
-        padding-left: 10px;
-        @include breakpoint(xs){
-            padding-top: 10px;
-            width: 100%;    
+img {
+    width: 100%;
+    height: 200px;
+}
+.column-labels{
+    margin-bottom: 20px;
+    padding-top: 10px;
+    div {
+        @include breakpoint(mobile){
+            display: none;
         }
-        @include breakpoint(sm){
-            padding-top: 10px;
-            width: 100%;   
+        @include breakpoint(desktop){
+            display: inline;
         }
-        @include breakpoint(md){
-            padding-top: 50px; 
-            width: 100%;   
-        }
-        @include breakpoint(md){
-            padding-top: 50px; 
-            width: 100%;   
-        }    
     }
+    
+}
+.product {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-border;
+}
 
-    .order-price{
-        @include breakpoint(xs){
-            padding-top: 25px;
-            width: 100%;    
-        }
-        @include breakpoint(sm){
-            padding-top: 25px;
-            width: 100%;   
-        }
-        @include breakpoint(md){
-            padding-top: 70px;
-            width: 100%;   
-        }
-        @include breakpoint(md){
-            padding-top: 70px;
-            width: 100%;   
-        }    
+.product-details {
+    margin-bottom: 100px;
+    text-transform: uppercase;
+}
+
+.product-title {
+    margin-right: 20px;
+    font-family: $font-bold;
+    font-weight: bold;
+}
+.product-description {
+    margin: 5px 20px 5px 0;
+    line-height: 1.4em;
+}
+.product-price {
+    font-style: italic;
+}
+
+
+.shopping-card{
+    background: white;
+}
+.product-quantity {
+    clear:both;
+}
+
+.product-line-price{
+    text-align: right;
+}
+
+.product-removal{
+    text-align: right;
+}
+
+.totals{
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $color-border;
+    .total-label {
+        text-align: left;
     }
-    .title{
-        font-weight: bold;
-        font-size: large;
+        
+    .total-value {
+        text-align: right;
+    }
+}
+
+
+.action-link {
+    padding: 0 0 0 0;
+    @include breakpoint(xs){
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-border;
+    }
+    @include breakpoint(sm){
+        text-align: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $color-border;
+    }
+    @include breakpoint(md){
+        text-align: left;
+    }
+    @include breakpoint(md){
+        text-align: left;
+    }
+}
+
+.action-button {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    @include breakpoint(xs){
+        text-align: center;
+    }
+    @include breakpoint(sm){
+        text-align: center;
+    }
+    @include breakpoint(md){
+        text-align: right;
+    }
+    @include breakpoint(md){
+        text-align: right;
     }
 }
